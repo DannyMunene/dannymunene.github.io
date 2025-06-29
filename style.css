@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: borde-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: rgb(130, 226, 130);
+    background-color: black
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.863);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    display: flex;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+    padding-top: 0.10rem;
+    padding-bottom: 0.10rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.navbar-brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+    font-size: 30px;
+
+}
+.navbar .logo {
+    color: black;
+    font-size: 5rem;
+    font-weight: bold;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+.nav-links a:hover{
+    color:aliceblue
+}
+.menu-icon{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.menu-icon span{
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+}
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    max-width: 100%;
+    height: auto;
+    width: 80%;
+    width: 20vw;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px green;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px black,
+                0 0 50px black,
+                0 0 100px black,
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0 6),
+    rgba(0, 0, 0, 0, 6)),
+    url('https://picsum.photos/id/1011/1600/900')
+    no-repeat center center/cover;
+    color: rgb(130, 226, 130);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card-group{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding-bottom: 0.25rem;
+}
+
+.card {
+    background: rgb(255, 255, 255);
+    color: rgb(130, 226, 130);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.card a{
+    text-decoration: none;
+    color: rgb(130, 226, 130);
+}
+
+.card :hover {
+    transform: translateY(-5px);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    color: rgb(130, 226, 130);
+}
+
+.contact a {
+    color: rgb(130, 226, 130);
+    text-decoration: none;
+
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px){
+    .hero h1{
+        font-size: 2em;
+    }
+    .hero p{
+        font-size: 1em;
+    }
+    .nav-links{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp{
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1,
+.hero p {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.5s;
+}
+
+.hero p {
+    animation-delay: 1s;
+}
+
+.about,
+.projects,
+.contact {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.card {
+    animation: slideInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+body.loaded .hero h1,
+body.loaded .hero p,
+body.loaded .about,
+body.loaded .projects,
+body.loaded .contact,
+body.loaded .card {
+    opacity: 1;
+}
